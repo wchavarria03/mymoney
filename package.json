@@ -1,0 +1,12 @@
+{
+  "name": "money-control-app",
+  "license": "MIT",
+  "engines": {
+    "node": "12.4.0"
+  },
+  "scripts": {
+    "build": "npm --prefix client install && npm --prefix client build",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "npm run build && npm run deploy"
+  }
+}
