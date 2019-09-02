@@ -2,11 +2,15 @@
   "name": "money-control-app",
   "license": "MIT",
   "engines": {
-    "node": "12.4.0"
+    "node": "12.4.0",
+    "yarn": "^1.17.3"
   },
   "scripts": {
-    "build": "npm --prefix client install && npm --prefix client build",
+    "build": "yarn --cwd client install && yarn --cwd client build",
     "deploy": "cp -a client/build/. public/",
-    "heroku-postbuild": "npm run build && npm run deploy"
+    "heroku-postbuild": "yarn build && yarn deploy"
+  },
+  "dependencies": {
+    "yarn": "^1.17.3"
   }
 }
