@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   scope '/api' do
     resources :categories
     resources :category_types
-  end
+    end
 end
