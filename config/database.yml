@@ -49,6 +49,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
+  host: localhost
   database: mymoney_production
   username: mymoney
   password: <%= ENV['MYMONEY_DATABASE_PASSWORD'] %>
