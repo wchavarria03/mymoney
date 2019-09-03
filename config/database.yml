@@ -15,7 +15,6 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: alonsoadmin
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -49,6 +48,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: mymoney_production
   username: mymoney
   password: <%= ENV['MYMONEY_DATABASE_PASSWORD'] %>
