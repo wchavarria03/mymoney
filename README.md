@@ -26,3 +26,6 @@ Things you may want to cover:
 
 # Start
 bin/rake start
+
+
+bin/rails g scaffold Ingredient drink:references description:string
