@@ -7,3 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 AdminUser.create!(email: 'wchavarria03@gmail.com', password: 'password', password_confirmation: 'password')
+
+CategoryType.create(
+  name: 'Expense',
+)
+
+CategoryType.create(
+    name: 'Income',
+)
+

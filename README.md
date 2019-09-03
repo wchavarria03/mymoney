@@ -26,6 +26,7 @@ Things you may want to cover:
 
 # Start
 bin/rake start
+bin/rake db:migrate
+bin/rake db:reset
 
-
-bin/rails g scaffold Ingredient drink:references description:string
+bin/rails g scaffold CategoryType  category:references name:string
