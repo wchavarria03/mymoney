@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_124527) do
+ActiveRecord::Schema.define(version: 2019_09_05_040624) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -63,6 +63,14 @@ ActiveRecord::Schema.define(version: 2019_09_03_124527) do
     t.index ["category_id"], name: "index_expenses_on_category_id"
   end
 
+  create_table "sub_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_sub_categories_on_category_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -74,4 +82,5 @@ ActiveRecord::Schema.define(version: 2019_09_03_124527) do
   end
 
   add_foreign_key "expenses", "categories"
+  add_foreign_key "sub_categories", "categories"
 end
