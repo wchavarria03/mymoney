@@ -1,9 +1,10 @@
-ActiveAdmin.register Expense do
+
+ActiveAdmin.register Transaction do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
-  permit_params :name, :description, :amount, :expense_date, :payment_method
-
+  permit_params :date, :details, :amount, :currency
+  #
   # or
   #
   # permit_params do

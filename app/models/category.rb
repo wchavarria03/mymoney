@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
-  has_many :expenses
-  has_many :category_types
+  belongs_to :category_type
+  has_one :sub_category
+  has_many :transactions
 end

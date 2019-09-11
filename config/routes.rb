@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :categories
       resources :category_types
       resources :sub_categories
+      resources :transactions
     end
   end
 end
