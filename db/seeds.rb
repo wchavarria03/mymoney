@@ -12,3 +12,4 @@ CategoryType.create!(name: 'Expense')
 
 CategoryType.create!(name: 'Income')
 
+CategoryType.create!(name: 'Saving')

@@ -1,3 +1,4 @@
+# frozen_string_literal
 module Api::V1
   class CategoriesController < ApplicationController
     before_action :set_category, only: [:show, :update, :destroy]
@@ -19,7 +20,7 @@ module Api::V1
       @category = Category.new(category_params)
 
       if @category.save
-        render json: @category, status: :created, location: @category
+        render json: @category, status: :created
       else
         render json: @category.errors, status: :unprocessable_entity
       end
@@ -40,14 +41,15 @@ module Api::V1
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_category
-        @category = Category.find(params[:id])
-      end
 
-      # Only allow a trusted parameter "white list" through.
-      def category_params
-        params.require(:category).permit(:title, :description)
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_category
+      @category = Category.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def category_params
+      params.require(:category).permit(:title, :description)
+    end
   end
 end

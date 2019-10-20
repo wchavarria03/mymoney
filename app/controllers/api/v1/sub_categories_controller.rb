@@ -1,3 +1,4 @@
+# frozen_string_literal
 module Api::V1
   class SubCategoriesController < ApplicationController
     before_action :set_sub_category, only: [:show, :update, :destroy]
@@ -19,7 +20,7 @@ module Api::V1
       @sub_category = SubCategory.new(sub_category_params)
 
       if @sub_category.save
-        render json: @sub_category, status: :created, location: @sub_category
+        render json: @sub_category, status: :created
       else
         render json: @sub_category.errors, status: :unprocessable_entity
       end
@@ -40,14 +41,15 @@ module Api::V1
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_sub_category
-        @sub_category = SubCategory.find(params[:id])
-      end
 
-      # Only allow a trusted parameter "white list" through.
-      def sub_category_params
-        params.require(:sub_category).permit(:category_id, :name)
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_sub_category
+      @sub_category = SubCategory.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def sub_category_params
+      params.require(:sub_category).permit(:category_id, :name)
+    end
   end
 end
