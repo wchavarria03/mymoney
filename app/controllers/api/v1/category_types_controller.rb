@@ -1,4 +1,4 @@
-# frozen_string_literal
+# frozen_string_literal: true
 module Api::V1
   class CategoryTypesController < ApplicationController
     before_action :set_category_type, only: [:show, :update, :destroy]
@@ -6,7 +6,6 @@ module Api::V1
     # GET /category_types
     def index
       @category_types = CategoryType.all
-
       render json: @category_types
     end
 
@@ -49,8 +48,6 @@ module Api::V1
 
     # Only allow a trusted parameter "white list" through.
     def category_type_params
-      logger.debug('Walter')
-      logger.debug(params)
       params.require(:category_type).permit(:name)
     end
   end
