@@ -33,3 +33,6 @@ bin/rails g scaffold CategoryType  category:references name:string
 
 docker-compose up
 docker-compose run web rake db:migrate
+
+#debug
+docker-compose run --service-ports web

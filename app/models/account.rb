@@ -10,7 +10,8 @@ class Account < ApplicationRecord
     }
   ]
 
-  def self.currency
-    currencies[self.currency_id]
+  def self.currency_data
+    byebug
+    currencies[self.currency]
   end
 end

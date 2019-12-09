@@ -11,7 +11,6 @@ module Api::V1
 
     # GET /accounts/1
     def show
-      byebug
       render json: @account
     end
 
@@ -49,7 +48,7 @@ module Api::V1
 
     # Only allow a trusted parameter "white list" through.
     def account_params
-      params.require(:account).permit(:name, :currency_id, :account_number, :balance)
+      params.require(:account).permit(:name, :currency, :account_number, :balance)
     end
   end
 end
